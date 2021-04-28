@@ -1,0 +1,811 @@
+/* colors */
+:root{
+    --primary:#EEBF00;
+    --secondary:#232B38;
+    --ternary:#6C6C6C;
+    --danger:#FE4545;
+    --pure:#FEFEFE;
+    --light:#F0F0F0;
+    --haven:#FFFFFF;
+    --footer:#2D333F;
+}
+
+/* Reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.container{
+    width:100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+     /* utility classes start here */
+.flex{
+    display: flex;
+}
+.flex-1{
+    flex:1;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+.items-center{
+    align-items: center;
+}
+.justify-center{
+    justify-content:center;
+}
+.magic-shadow{
+    position:relative;
+    background:var(--pure);
+}
+.magic-shadow::after{
+    content:'';
+    display:block;
+    width:100%;
+    height:69px;
+    background-image: url('../icons/shadow.svg');
+    background-repeat:no-repeat;
+    background-position:center;
+    position:absolute;
+    bottom:-22px;
+    z-index:-1;
+}
+
+.magic-shadow-sm{
+    position:relative;
+    background:var(--pure);
+}
+.magic-shadow-sm::after{
+    content:'';
+    display:block;
+    width:100%;
+    height:69px;
+    background-image: url('../icons/shadow-sm.svg');
+    background-repeat:no-repeat;
+    background-position:center;
+    position:absolute;
+    bottom:-22px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:-1;
+}
+.btn{
+    padding:0.85rem 1rem;
+    border-radius: 4px;
+    line-height:0.8;
+    font-size:1rem;
+    cursor:pointer;
+    transition:all 0.3s ease ;
+    border:1px solid transparent;
+}
+.btn-primary{
+    background:var(--primary);
+    color:var(--haven);
+}
+.btn-primary:hover{
+    background:var(--haven);
+    color:var(--primary);
+    border:1px solid var(--primary);
+}
+.btn-secondary{
+    background:var(--secondary);
+    color:var(--haven);
+}
+.btn-secondary:hover{
+    background:var(--haven);
+    color:var(--secondary);
+    border:1px solid var(--secondary);
+}
+.section-heading{
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    position: relative;
+    margin-bottom: 6rem;
+}
+.section-heading::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-image: url(../icons/hr.svg);
+    background-repeat:no-repeat;
+    background-position: center;
+    position:absolute;
+    bottom:-40px;
+}
+.hr{
+    border: 1px solid var(--light);
+    opacity:0.8;
+    margin:1rem 0;
+}
+.text-center{
+    text-align: center
+}
+.text-primary{
+    color:var(--primary)
+}
+.text-pure{
+    color:var(--haven)
+}
+ /* utility classes Ends here */
+@media(min-width:576px){
+    .container{
+        max-width: 540px;
+    }
+}
+@media(min-width:768px){
+    .container{
+        max-width: 720px;
+    }
+}
+@media(min-width:992px){
+    .container{
+        max-width: 960px;
+    }
+}
+@media(min-width:1200px){
+    .container{
+        max-width: 1152px;
+    }
+}
+
+header.topbar{
+background: var(--secondary);
+color: var(--pure);
+font-family: 'Raleway', sans-serif;
+padding:0.75rem 0;
+}
+header.topbar .auth >div a{
+    color: var(--pure);
+    text-decoration: none;
+}
+header.topbar .auth >div img{
+    margin-right: 0.35rem;
+}
+header.topbar .container .auth{
+    display: flex;
+}
+header.topbar .icons a{
+ margin-right: 0.6rem;
+}
+header.topbar .auth .divider{
+    padding:0 1rem;
+}
+/* nav */
+nav .top{
+    padding:1.5rem 0; 
+}
+nav .top .contact h5 , nav .top .time h5{
+    font-family: 'Raleway', sans-serif;
+    font-weight:900;
+    margin-bottom: 0.25rem;
+}
+nav .top .contact h6 ,nav .top .time h6{
+    font-family: 'Raleway', sans-serif;
+    font-weight:600;
+    letter-spacing:0.055rem;
+    font-size: 0.75 rem;
+    color:var(--ternary);
+}
+nav .top .contact img ,nav .top .time img{
+    margin-right:1rem ;
+}
+/* 2nd navbar  */
+nav .navbar a{
+    text-decoration: none;
+    color: var(--secondary);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size:1rem;
+    padding: 1rem 1.5rem;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+nav .navbar a.active{
+   background:var(--primary);
+   color:var(--pure);
+}
+nav .navbar a:hover{
+    background:var(--primary);
+    color:var(--pure);
+}
+      /* hero section */
+  
+ .hero{
+    height:500px;
+    background-image: url("../images/hero.png");
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.hero .container{
+    position:relative;
+}
+.welcome{
+    margin-bottom: 0.25rem;
+}
+.welcome span{
+    font-family:'Raleway', sans-serif;
+    font-weight:700;
+    color:var(--secondary);
+    margin-right: 0.75rem;
+    }
+.hero h1{
+    font-family:'Raleway', sans-serif;
+    font-weight:900;
+    font-size:2.1rem;
+    margin-bottom:0.75rem;
+}   
+.hero h1 span{
+    color: var(--primary);
+}
+.hero p{
+    font-family:'Raleway', sans-serif;
+    font-weight:500;
+    width:50%;
+    line-height:1.5;
+    margin-bottom:1rem;
+    color:var(--secondary);
+}
+.hero button:first-child{
+  margin-right: 0.50rem;
+}
+.hero-image{
+    position:absolute;
+    top:-40px;
+    right:40px;
+}
+/* hero ends */
+section{
+    padding:4rem 0;
+}
+section.top-products{
+    background: var(--light);
+}
+section.top-products .food-slider .food-card{
+    background:var(--haven);
+    padding:1.5rem 0;
+    border-radius:4px;
+}
+section.top-products .food-slider .food-card .product-image img{
+    width:80%;
+    height:200px;
+    /* image re size thik korte eita use hoy  */
+    object-fit:contain;
+    padding-bottom: 1rem;
+}
+section.top-products .food-slider .food-card h2{
+    font-family:'Raleway', sans-serif;
+    font-weight:700;
+    font-size:1.3rem;
+    margin-bottom: 0.25rem;
+}
+section.top-products .food-slider .food-card .stars{
+    margin-bottom:0.5rem;
+}
+section.top-products .food-slider .food-card .stars img{
+    margin-right: 0.25rem;
+}
+section.top-products .food-slider .food-card .price{
+    font-family:'Raleway', sans-serif;
+    font-weight:500;
+    color:var(--danger);
+}
+section.top-products .food-slider .food-card button{
+    font-family:'Raleway', sans-serif;
+    font-weight:600;
+    color:var(--secondary);
+    background:var(--haven);
+    border:2px solid var(--primary);
+    border-radius: 4px;
+    display:flex;
+    align-items:center;
+    width:50%;
+    font-size: 1rem;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    }
+    section.top-products .food-slider .food-card button:hover{
+        background:var(--primary);
+    }
+.food-slider .food-card button img{
+    background: var(--primary);
+    padding: 0.50rem;
+    height: 32px;
+    margin-right: 1.2rem;
+}
+.slick-slide{
+    margin:0 22px;
+}
+.slick-list{
+    margin:0 -22px;
+}
+.top-products .slider-btn{
+    width:30px;
+    height: 30px;
+    border: none;
+    background: var(--primary);
+    border-radius:4px;
+    cursor:pointer;
+    outline:none;
+}
+.top-products .slider{
+    position:relative;
+}
+.prev-btn{
+    position:absolute;
+    top:46%;
+    left:-3rem;
+    z-index:1;
+}
+.next-btn{
+    position:absolute;
+    top:46%;
+    right:-3rem;
+    z-index:1;
+}
+.top-products .btn-wrapper{
+    margin-top: 2rem;
+}
+.slick-track{
+    padding:1rem 0;
+}
+ 
+/* About us starts  */
+.about-meal-wrap img{
+    width:85%;
+}
+.about-meal-wrap h2{
+    font-family:'Raleway', sans-serif;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--secondary);
+    margin-bottom: 2rem;
+    line-height: 1.3rem;
+}
+.about-meal-wrap p{
+    font-weight:500;
+    color:var(--ternary);
+    margin-bottom: 2rem;
+    line-height: 1.7rem;
+}
+
+/* our services starts here  */
+.our-services{
+    background: var(--light);
+    position: relative;
+    z-index:0;
+}
+.card-wrapper .service-card{
+    background: var(--haven);
+    text-align:center;
+    padding:2rem;
+    padding-top:4rem;
+    margin-right: 2rem;
+    position:relative;
+    border-radius:4px;
+}
+.card-wrapper{
+    margin-right: -2rem;
+    margin-top: 8rem;
+}
+.card-wrapper .service-card .service-img{
+    position:absolute;
+    top:-45px;
+    left:50%;
+    transform:translateX(-50%)
+}
+.card-wrapper .service-card h2{
+    font-weight:700;
+    font-size:1.3rem;
+    margin-bottom: 1rem;
+}
+.card-wrapper .service-card p{
+    line-height:1.6;
+    margin-bottom:1rem;
+    
+}
+/* timer starts */
+.big-deal{
+    background:linear-gradient(
+        rgba(35,43,56,0.9),
+        rgba(35,43,56,0.9)
+    ),url("../images/food-table.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-attachment: fixed;
+}
+
+.big-deal .timer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -2rem;
+    margin-bottom: 2rem;
+}
+.big-deal .timer div{
+    margin-right: 2rem;
+    background: var(--primary);
+    width:150px;
+    height:150px;
+    border-radius: 4px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.big-deal .timer div span:first-child{
+    font-weight: 700;
+    font-size:2.5rem;
+    color: var(--haven);
+    margin-bottom: 0.05rem;
+}
+.big-deal .timer div span:last-child{
+    font-weight: 500;
+    color: var(--haven);
+}
+
+/* blog section starts here */
+.latest-news{
+    background:var(--light);
+    position:relative;
+    z-index:0;
+    
+}
+.article-wrapper{
+    margin-right: -2rem;
+}
+.card{
+    margin-right: 2rem;
+    background: var(--haven);
+    border-radius: 4px;
+
+}
+.card img{
+    width:100%;
+    height:80%; 
+}
+.card .card-content{
+    padding:2rem;
+}
+.card .card-content .post-meta{
+    margin-bottom: 1rem;
+}
+.coment-count{
+    margin-left:1rem;
+}
+.card-content h2{
+    font-size:1.3rem;
+    margin-bottom:1rem;
+}
+.card-content p{
+    line-height:1.6;
+}
+.btn-wrapper{
+    margin-top:2rem;
+}
+
+/* Subscribe starts here */
+.subscribe{
+    background: var(--primary);
+}
+.subscribe .container > div:first-child img{
+    width:90%;
+}
+.subscribe .container > div:first-child{
+    flex: 1;
+}
+.subscribe .container > div:last-child{
+    flex: 1;
+}
+.subscribe h1{
+    font-size:1.7rem;
+    font-weight:900;
+    margin-bottom: 1.5rem;
+}
+.subscribe p{
+   font-weight: 500;
+   font-size:1rem;
+   margin-bottom: 1.5rem;
+   line-height:1.5rem;
+}
+.subscribe .input-wrap{
+    background: var(--haven);
+    display:flex;
+    padding:0.3rem;
+    border-radius: 4px;
+}
+.subscribe .input-wrap input{
+    width:100%;
+    border:none;
+    outline:none;
+    padding:0 1rem;
+    font-size:1rem;
+}
+.subscribe .input-wrap button{
+    padding:0.8rem 2rem;
+    border:none;
+    background:var(--primary);
+    color:white;
+    border-radius:8px;
+    font-size: 1rem;
+    cursor:pointer;
+    outline:none;
+}
+.subscribe .input-wrap button:hover{
+    border: 1px solid var(--primary) ;
+    background:var(--haven);
+    color:black;
+}
+/* contact us start here */
+.contact-us{
+    padding-top:0;
+    padding-bottom:0;
+}
+.contact-info-wrapper{
+    padding:4rem 0;
+    flex: 1;
+}
+.map{
+    flex: 1;
+}
+.contact-info{
+    display:flex;
+    justify-content:center;
+}
+.contact-info > div >div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.contact-info > div >div img{
+    margin-right: 1rem;
+}
+.contact-info > div >div >div{
+    display:flex;
+    flex-direction: column;
+}
+.contact-info > div >div >div span:first-child{
+    font-size:1.2rem;
+    font-weight:700;
+    margin-bottom:0.25rem;
+}
+
+/* footer starts here */
+footer{
+    background:var(--footer);
+    padding:4rem 0;
+}
+footer .container{
+    display:flex;
+    color:var(--pure);
+}
+
+footer .box{
+    flex:1;
+    margin-right:2rem;
+    text-align:center;
+}
+
+footer .instagram-api img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+footer .instagram-api .post-wrap{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+footer .instagram-api .post-wrap > div{
+    width: calc(1/3*100% - (1 - 1/3)*10px);
+    margin-bottom:10px;
+}
+footer .box ul{
+    list-style-type: none;
+}
+footer .box ul li a{
+    color:var(--pure);
+    text-decoration: none;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+footer .box ul li a:hover{
+    color:var(--primary);
+}
+footer .box h3{
+    border-bottom:1px solid var(--primary);
+    padding-bottom:1rem;
+    margin-bottom:1rem;
+}
+
+footer .box p{
+    line-height: 1.6;
+    margin-bottom:1rem;
+}
+footer .box ul li{
+    margin-bottom:1rem;
+}
+footer .box:nth-child(3) > div {
+    display:flex;
+    justify-content: center;
+}
+footer .box:nth-child(3){
+    text-align: left;
+}
+footer .box:nth-child(3) h3{
+    text-align: center;
+}
+footer .box:nth-child(3) > div img{
+    margin-right:1rem;
+}
+footer .box:nth-child(3) ul li{
+    margin-bottom:1.5rem;
+}
+
+footer.copyright{
+    padding:1rem 0;
+    background: var(--secondary);
+    color:var(--pure);
+    text-align: center;
+    font-size: 0.75rem;
+}
+footer.copyright a{
+    color:var(--primary);
+    text-decoration: none;
+}
+
+/* responsiveness */
+.nav-background .mobile-logo{
+    padding:1rem;
+}
+.nav-background .mobile-nav{
+    padding:1rem;
+}
+.nav-background .mobile-nav ul{
+    list-style-type: none;
+}
+.nav-background .mobile-nav ul li{
+    margin-bottom:1rem;
+}
+.nav-background .mobile-nav ul li a{
+    text-decoration: none;
+    color:var(--secondary);
+    font-family: "Raleway-medium";
+}
+.nav-background .mobile-nav ul li a:hover{
+    color:var(--primary);
+}
+.nav-background .contact, .nav-background .time{
+    padding:1rem;
+    padding-left:0;
+}
+.nav-background .contact img, .nav-background .time img{
+    margin-right:1rem;
+}
+.nav-background .contact h5,.nav-background .time h5{
+    font-family:"Raleway-bold";
+    margin-bottom:0.25rem;
+    font-size:1rem;
+}
+.nav-background .contact h6, .nav-background .contact h6{
+    font-size: 0.75rem;
+}
+.nav-background .cart{
+    margin-bottom:2rem;
+}
+.nav-background .cart a{
+    color:var(--secondary);
+    text-decoration: none;
+    font-family: "Raleway-bold";
+}
+.nav-background .cart img{
+    margin-right:0.75rem;
+    width:20px;
+    height:20px;
+}
+
+@media (max-width:992px){
+    .nav-trigger{
+        display:block;
+    }
+    header.topbar, nav{
+        display:none;
+    }
+
+    header.hero {
+        margin-top:-4rem;
+    }
+    header.hero .hero-image{
+        right:-160px;
+        top:100px;
+    }
+    .top-products .slider-btn{
+        display:none!important;
+    }
+    .latest-news .article-wrapper{
+        flex-direction:column;
+    }
+    .latest-news .article-wrapper .card{
+        margin-right:0;
+        margin-bottom:4rem;
+    }
+
+    footer .instagram-api .post-wrap > div{
+        width:calc(1/2*100% - (1 - 1/3)*10px);
+    }
+}
+
+@media (max-width:768px){
+    .about-meal .about-meal-wrap{
+        flex-direction: column;
+    }
+    .about-meal .about-meal-wrap img{
+        width:100%;
+        margin-bottom: 2rem;
+    }
+
+    section.our-services .card-wrapper{
+        flex-direction:column;
+    }
+    section.our-services .card-wrapper .service-card{
+        margin-bottom:6rem;
+    }
+    footer .container{
+        flex-direction: column;
+    }
+    footer .box{
+        text-align: left;
+        margin-right:0;
+        margin-bottom:3rem;
+    }
+    footer .box:nth-child(3) h3{
+        text-align:left;
+    }
+    footer .box:nth-child(3) > div{
+        display:block;
+    }
+}
+
+@media( max-width:576px){
+    header.hero .hero-image{
+        right:-235px;
+        top:150px;
+    }
+    header.hero .container{
+        padding-left:1rem;
+    }
+    header.hero{
+        margin-top:-3rem;
+    }
+    section.big-deal .timer > div{
+        margin-right:0.50rem;
+    }
+    section.big-deal .timer{
+        margin-right:-0.5rem;
+    }
+
+    section.subscribe .container{
+        flex-direction: column;
+        padding:0.50rem;
+    }
+   
+}
